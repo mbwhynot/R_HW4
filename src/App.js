@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Block from "./Block";
+class Data extends React.Component {
+  state = {
+    isHide: false,
+  };
 
-function App() {
+  componentDidMount() {
+    alert("1")
+  }
+
+  componentWillUnmount() {
+    alert("1")
+  }
+
+  render() {
+    console.log("render from return");
+    return (
+      <div className = "App">
+        <button onClick={() => this.setState({ isHide: !this.state.isHide })}>
+        Click Me!
+        </button>
+        {this.state.isHide && <Block />}
+      </div>
+    );
+  }
+}
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Block /> */}
+      <Data />
     </div>
   );
-}
+};
 
 export default App;
