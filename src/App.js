@@ -3,21 +3,14 @@ import "./App.css";
 import Block from "./Block";
 
 
+
+
+
 class App extends React.Component {
   
   state = {
     isHide: false,
   };
-
-  componentDidMount()
-  {
-    alert('1')
-  }
-
-  componentWillUnmount() 
-  {
-    alert('2')
-  }
 
 
   render() {
